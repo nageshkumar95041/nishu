@@ -1,0 +1,36 @@
+/* components/OrientationToggle.module.css */
+.toggleContainer {
+    text-align: center;
+  }
+  
+  .content {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    padding: 20px;
+    transition: all 0.3s;
+  }
+  
+  .portrait {
+    /* Portrait orientation styles */
+    width: 80%;
+    margin: 0 auto;
+    background-color:black;
+    padding: 20px;
+  }
+  
+  .landscape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    background-color:black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Landscape orientation styles */
+  }
+  
