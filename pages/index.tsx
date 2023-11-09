@@ -94,10 +94,10 @@ function index({netflixOriginal,
        </Head>
        <Header searchFun={searchFun}/>
       
-       <main className="pl-4 pb-24 lg:space-y-24 lg:pl-16">
+       <main className="pl-2  lg:space-y-24">
        <Banner netflixOriginals={netflixOriginals}/>
    
-       <section className='md:space-y-9'>
+       <section className='md:space-y-9 space-y-0'>
         
         {
           loader?<Spinner/>:null

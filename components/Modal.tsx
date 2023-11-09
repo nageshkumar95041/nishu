@@ -68,7 +68,7 @@ function Modal() {
 
   
   return (
-    <MuiModal open={showModal} onClose={handleClose} className='fixex z-50 landscape:top-0 mx-auto  left-0 right-0 md:rounded-md overflow-y-hidden scrollbar-hide overflow-hidden md:max-w-4xl w-full'>
+    <MuiModal open={showModal} onClose={handleClose} className='fixex z-50  mx-auto  left-0 right-0 md:rounded-md overflow-y-hidden scrollbar-hide overflow-hidden lg:max-w-4xl w-full'>
         <>
       {playerIcon?<button className='absolute modalButton right-5 top-5 !z-40 h-9 w-9 border-none bg-[#181818] hover:bg-[#181818]' onClick={()=>setShowModal(false)}>
           <svg className='h-5 w-6' fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -85,16 +85,17 @@ function Modal() {
             muted={muted}
             onPlay={onplayhandle}
             onPause={pauseHandle}
+            
            
           />
           <div className="absolute flex w-full items-center bottom-1/4 justify-between px-10 ">
            <div className='flex' >
-          {playerIcon?<button className='flex gap-x-4 bg-white rounded text-black font-bold items-center px-2 cursor-pointer transition hover:bg-[#e6e6e6]' onClick={()=>setPlay(!play)}>
+          {playerIcon?<button className='lg:flex hidden gap-x-4 bg-white rounded text-black font-bold items-center px-2 cursor-pointer transition hover:bg-[#e6e6e6]' onClick={()=>setPlay(!play)}>
              <FaPlay className='h-7 w-7 text-black ' />
               {play?"Play":"Pause"}
             </button>:""}  
          {playerIcon?<Button>
-              <HiOutlinePlusCircle  className='h-7 w-7 text-white '/>
+              <HiOutlinePlusCircle  className='h-7 w-7 text-white hidden lg:flex '/>
             </Button>:""}   
 
            </div>

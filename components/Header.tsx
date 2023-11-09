@@ -37,8 +37,8 @@ function Header(props:any) {
     <div className="flex space-x-2 items-center md:space-x-10 ">
         {/* <img src="https://rb.gy/ulxxee" alt="" width={100} height={100} className='cursor-pointer object-contain' /> */}
         <div className="text-red-500 text-4xl font-bold">Nishu</div>
-        <ul className='hidden space-x-4 md:flex'>
-            <li className='headerlink'>Home</li>
+        <ul className='hidden space-x-4 lg:flex'>
+            <li className='headerlink' onClick={()=>scrollBy(0,200)}>Home</li>
             <li className='headerlink'>Tv Shows</li>
             <li className='headerlink'>Movies</li>
             <li className='headerlink'>New & Popular</li>
@@ -48,7 +48,7 @@ function Header(props:any) {
     <div className="">
       <div className=" flex sm:flex space-x-4 text-sm font-light">
 <form action="">
-  <input className="rounded px-2 h-6 text-black" autoComplete="off" onChange={onChangeHandler}  type="text" name="search" id="" placeholder={search}  />
+  <input className="rounded px-2 h-6 text-black w-24" autoComplete="off" onChange={onChangeHandler}  type="text" name="search" id="" placeholder={search}  />
 </form>
       <svg onClick={()=>props.searchFun(search)}  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
   <path fillRule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clipRule="evenodd"  />
