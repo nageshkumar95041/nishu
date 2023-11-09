@@ -28,7 +28,7 @@ function Banner({netflixOriginals}:Props) {
     <h1 className='text-2xl font-bold md:text-4xl lg:text-6xl'>{movie?.title||movie?.name|| movie?.original_name}</h1>
     <p className='max-w-xs text-2xs md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl'>{movie?.overview.length!=undefined&&movie.overview.length>200?movie.overview.slice(0,200):movie?.overview}</p>
     <div className='flex space-x-2'>
-      <button className='bannerButton bg-white text-black'><FaPlay className='h-4 w-4 text-black md:h-7 md:w-7' onClick={()=>{setCurrentMovie(movie); setShowModal(true)}}/>Play</button>
+      <button className='bannerButton bg-white text-black'  onClick={()=>{setCurrentMovie(movie); setShowModal(true)}}><FaPlay className='h-4 w-4 text-black md:h-7 md:w-7'/>Play</button>
       <button className='bannerButton bg-[gray]/70' onClick={()=>{setCurrentMovie(movie); setShowModal(true)}}><HiInformationCircle className='h-4 w-4 text-white md:h-7 md:w-7' /> More Info</button>
     </div>
    </div>
