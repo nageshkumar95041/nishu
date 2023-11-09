@@ -88,7 +88,7 @@ function index({netflixOriginal,
      <div className="relative h-screen">
        <Head>
                <title>
-                   Home- Netflix
+                   Home- Nishu
                </title>
                <link rel="stylesheet" href="" />
        </Head>
