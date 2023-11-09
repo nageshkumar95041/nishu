@@ -47,7 +47,7 @@ function index({netflixOriginal,
  /* eslint-disable */
 
  const [data,setData]=useState([]);
- const [data1,setData1]=useState([]);
+ const [data1,setData1]=useState(false);
  const searchData=useSearchParams();
  const [loader,setLoader]=useState(false);
 
@@ -57,23 +57,29 @@ function index({netflixOriginal,
   function searchFun(x:any){
 
     
-    setData1(x);
+    
     setLoader(true)
-    fetch(`https://api.themoviedb.org/3/search/movie?query=${data1}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`).then((res)=>{
-      res.json().then(res=>{setData(res.results)}).catch((err)=>alert("result not found"))
-      setLoader(false)
-     
+    fetch(`https://api.themoviedb.org/3/search/movie?query=${x}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`).then((res)=>{
+      res.json().then(res=>{setData(res.results),setLoader(false)}).catch((err)=>alert("result not found"))
+    
+      
     })
+    setData1(true)
+  
+    
   }
+ 
+ 
+ 
   
 
- useEffect(()=>{
-  setLoader(true)
-  fetch(`https://api.themoviedb.org/3/search/movie?query=${searchData?.get("search")}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`).then((res)=>{
-    res.json().then(res=>setData(res.results)).catch((err)=>alert("result not found"))
-    setLoader(false)
-  })
-},[])
+//  useEffect(()=>{
+//   setLoader(true)
+//   fetch(`https://api.themoviedb.org/3/search/movie?query=${searchData?.get("search")}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`).then((res)=>{
+//     res.json().then(res=>setData(res.results)).catch((err)=>alert("result not found"))
+//     setLoader(false)
+//   })
+// },[])
 
 
 /* eslint-disable */
@@ -100,9 +106,9 @@ function index({netflixOriginal,
        <section className='md:space-y-9 space-y-0'>
         
         {
-          loader?<Spinner/>:null
+          loader?<Spinner/>:data1&&<Row title="Search Results" movies={data}/>
         }
-           <Row title="Search Results" movies={data}/>
+           
        <Row title="Trending Now" movies={trendingNow}/>
             
            <Row title="Top Rated" movies={topRated}/>
